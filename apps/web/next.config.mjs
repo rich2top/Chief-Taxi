@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  transpilePackages: ["@leel/shared"]
-};
+const nextConfig = {};
 
 export default nextConfig;
-
