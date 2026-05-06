@@ -2,7 +2,6 @@ import {
   ArrowRight,
   BatteryCharging,
   BriefcaseBusiness,
-  CalendarClock,
   CarFront,
   Check,
   Crown,
@@ -20,6 +19,7 @@ import {
   SlidersHorizontal,
   Snowflake,
   Sparkles,
+  Share2,
   Youtube
 } from "lucide-react";
 import Image from "next/image";
@@ -44,48 +44,48 @@ const rideOptions = [
   },
   {
     title: "Comfort",
-    detail: "More room, calmer cabin quality, and added convenience for work trips.",
-    price: "Executive",
+    detail: "Extra room, cleaner cabin air, steady AC, and a calmer driver experience.",
+    price: "Comfort",
     icon: Gem,
-    features: ["Extra legroom", "WiFi-ready cabin", "Water on request"]
+    features: ["Extra legroom", "Odor-free cabin", "Polite driver"]
   },
   {
-    title: "VIP",
-    detail: "A premium lounge-style ride for airport transfers, executives, and events.",
-    price: "Premium",
+    title: "Executive",
+    detail: "Premium SUV cabin with priority matching, quiet service, and hospitality add-ons.",
+    price: "Premium EV",
     icon: Crown,
-    features: ["Priority driver", "Premium seating", "Luggage assistance"]
+    features: ["Wet towel", "Premium wipes", "Water and luggage assist"]
   }
 ];
 
 const controls = [
-  { icon: Music, title: "Music", detail: "Afrobeats, Gospel, Jazz, R&B, Instrumental, or quiet ride." },
-  { icon: Snowflake, title: "AC", detail: "Set cooler, normal, warmer, or off before pickup." },
-  { icon: ShieldCheck, title: "Safety", detail: "SOS, trip sharing, route monitoring, and support." },
-  { icon: CalendarClock, title: "Schedule", detail: "Immediate, scheduled, hourly, airport, and future corporate rides." }
+  { icon: Music, title: "Ride sound", detail: "Pick Afrobeats, Gospel, Jazz, Calm, News, or a live station." },
+  { icon: Snowflake, title: "Cabin AC", detail: "Choose Cool, Normal, or Warm before the driver arrives." },
+  { icon: Share2, title: "Trip share", detail: "Send a live trip link to trusted contacts based on ride class." },
+  { icon: ShieldCheck, title: "Safety Center", detail: "Route watch, silent alert, emergency call, and operations support." }
 ];
 
 const fleet = [
   {
     name: "Aion Y Plus",
-    className: "Comfort EV crossover",
+    className: "Regular EV crossover",
     image: "/images/fleet/aion-y-road-clean.jpg",
     detail: "Roomy crossover comfort for daily rides, airport pickups, and easy city access.",
     specs: ["High ride height", "Quiet EV cabin", "City-ready comfort"]
   },
   {
     name: "Aion i60",
-    className: "Executive compact SUV",
+    className: "Comfort compact SUV",
     image: "/images/fleet/aion-i60-mood.jpg",
     detail: "A polished SUV profile for business movement, hotel transfers, and executive trips.",
     specs: ["Executive stance", "Smooth cabin", "Premium arrival"]
   },
   {
     name: "Aion V",
-    className: "Premium EV SUV",
+    className: "Executive EV SUV",
     image: "/images/fleet/aion-i60-studio-clean.jpg",
-    detail: "A confident SUV presence for VIP service, family movement, and longer bookings.",
-    specs: ["VIP presence", "Spacious SUV", "Long-trip comfort"]
+    detail: "A confident SUV presence for executive service, family movement, and longer bookings.",
+    specs: ["Executive presence", "Spacious SUV", "Long-trip comfort"]
   }
 ];
 
@@ -164,7 +164,7 @@ export default function HomePage() {
             </span>
             <h1>Your ride, your control.</h1>
             <p>
-              Book an electric ride, set your music and AC, share the trip, and follow every
+              Book an electric ride, set your ride sound and AC, share the trip, and follow every
               movement until drop-off.
             </p>
 
@@ -173,16 +173,16 @@ export default function HomePage() {
                 Book a test ride
                 <ArrowRight size={19} />
               </Link>
-              <Link className="button glass large" href="/customer">
-                Customer preview
+              <Link className="button glass large" href="/driver">
+                Driver preview
               </Link>
             </div>
           </div>
 
           <div className="booking-hero-card" id="booking-panel">
             <div className="booking-card-top">
-              <span>Ride request</span>
-              <strong>6 min</strong>
+              <span>Live ride setup</span>
+              <strong>8 min</strong>
             </div>
             <div className="booking-field">
               <MapPin size={18} />
@@ -201,21 +201,21 @@ export default function HomePage() {
             <div className="preference-row">
               <span>
                 <Music size={15} />
-                Gospel
+                Afrobeats
               </span>
               <span>
                 <Snowflake size={15} />
-                Cooler
+                Cool AC
               </span>
               <span>
                 <ShieldCheck size={15} />
-                Share trip
+                Safety Center
               </span>
             </div>
-            <button className="button primary wide">
-              See ride options
+            <Link className="button primary wide" href="/customer">
+              Open booking
               <ArrowRight size={18} />
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -226,7 +226,7 @@ export default function HomePage() {
           </div>
           <div>
             <strong>Control</strong>
-            <span>Music and AC</span>
+            <span>Sound and AC</span>
           </div>
           <div>
             <strong>Live</strong>
@@ -323,7 +323,7 @@ export default function HomePage() {
             <div className="console-top">
               <div>
                 <span>LEEL Ride</span>
-                <strong>Comfort booking</strong>
+                <strong>Active trip</strong>
               </div>
               <small>6 min</small>
             </div>
@@ -351,11 +351,11 @@ export default function HomePage() {
             <div className="console-preferences">
               <span>
                 <Music size={14} />
-                Gospel
+                Afrobeats
               </span>
               <span>
                 <Snowflake size={14} />
-                20°C
+                Cool
               </span>
               <span>
                 <ShieldCheck size={14} />
@@ -369,7 +369,7 @@ export default function HomePage() {
               </span>
               <div>
                 <strong>Cabin control</strong>
-                <span>Cooler AC selected before pickup</span>
+                <span>Cool AC and ride sound visible to driver</span>
               </div>
               <small>Active</small>
             </div>
@@ -387,7 +387,7 @@ export default function HomePage() {
           </span>
           <h2>The customer sets the ride before pickup.</h2>
           <p>
-            Set music, AC, route visibility, and safety preferences before the car arrives.
+            Set ride sound, AC, route visibility, and safety preferences before the car arrives.
             Keep every important detail visible during the trip.
           </p>
           <div className="control-list">
@@ -441,7 +441,7 @@ export default function HomePage() {
         <div className="business-grid">
           <article>
             <h3>Airport transfer</h3>
-            <p>Scheduled EV pickup, luggage assistance, and VIP routing.</p>
+            <p>Scheduled EV pickup, luggage assistance, and priority routing.</p>
           </article>
           <article>
             <h3>Corporate accounts</h3>
